@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dask-scheduler
+spec:
+  ports:
+  - port: 8786
+    targetPort: 8786
+    name: dashboard
+  - port: 8787
+    targetPort: 8787
+    name: scheduler
+  selector:
+    app: dask-scheduler
